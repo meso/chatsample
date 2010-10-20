@@ -1,0 +1,58 @@
+body {
+  padding: 10px 50px 5px 50px;
+  font: 14px "Lucida Grande", "Helvetica Nueue", Arial, sans-serif;
+}
+#chat {
+  height: 500px;
+  overflow: auto;
+  width: 800px;
+  border: 1px solid #eee;
+}
+#chat p {
+  padding: 0px;
+  margin: 0px;
+}
+#chat div {
+  padding: 5px;
+  margin: 0;
+}
+#chat div:nth-child(odd) {
+  background: #f6f6f6;
+}
+#chat .permalink {
+  font: 3px;
+  color: #AEAEAE;
+}
+#form {
+  width: 782px;
+  background: #333;
+  padding: 5px 10px;
+}
+#form input[type=text] {
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #eee;
+}
+#form #name {
+  width: 85px;
+}
+#form #text {
+  width: 620px;
+}
+#form input[type=submit] {
+  cursor: pointer;
+  background: #999;
+  border: none;
+  padding: 6px 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  margin-left: 5px;
+  text-shadow: 0 1px 0 #fff;
+}
+#form input[type=submit]:hover {
+  background: #A2A2A2;
+}
+#form input[type=submit]:active {
+  position: relative;
+  top: 2px;
+}

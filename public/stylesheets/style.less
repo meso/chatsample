@@ -1,0 +1,60 @@
+body {
+  padding: 10px 50px 5px 50px;
+  font: 14px "Lucida Grande", "Helvetica Nueue", Arial, sans-serif;
+}
+#chat {
+  height: 500px;
+  overflow: auto;
+  width: 800px;
+  border: 1px solid #eee;
+  p {
+    padding: 0px;
+    margin: 0px;
+  }
+  div {
+    padding: 5px;
+    margin: 0;
+  }
+  div:nth-child(odd) {
+    background: #F6F6F6
+  }
+  .permalink {
+    font: 3px;
+    color: #AEAEAE;
+  }
+}
+#form {
+  width: 782px;
+  background: #333;
+  padding: 5px 10px;
+  input[type=text] {
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #eee;
+  }
+  #name {
+    width: 85px;
+  }
+  #text {
+    width: 620px;
+  }
+  input[type=checkbox] {
+  }
+  input[type=submit] {
+    cursor: pointer;
+    background: #999;
+    border: none;
+    padding: 6px 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    margin-left: 5px;
+    text-shadow: 0 1px 0 #fff;
+  }
+  input[type=submit]:hover {
+      background: #A2A2A2;
+  }
+  input[type=submit]:active {
+      position: relative;
+      top: 2px;
+  }
+}

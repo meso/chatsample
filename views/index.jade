@@ -1,0 +1,10 @@
+h1= title
+p 現在接続している人は
+  span#count
+  人います
+#chat
+form#form(onsubmit='send(); return false;')
+  input#name(type='text', placeholder='Twitter ID')
+  input#text(type='text', autocomplete='off')
+  input(type='submit', value='送信')
+
