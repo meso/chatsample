@@ -1,6 +1,6 @@
 var express = require('express'),
     io = require('socket.io'),
-    db = require('dirty')('log.db'),
+    db = require('dirty')(__dirname + '/log.db'),
     json = JSON.stringify;
 var app = module.exports = express.createServer();
 
@@ -28,7 +28,7 @@ app.configure('production', function(){
 
 // Routes
 
-app.get('/chat', function(req, res){
+app.get('/', function(req, res){
   res.render('index.jade', {
     locals: {
         title: 'リアルタイムWebハッカソン Chat Room'
