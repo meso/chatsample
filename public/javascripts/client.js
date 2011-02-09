@@ -1,4 +1,4 @@
-var socket = new io.Socket('localhost'),
+var socket = new io.Socket(),
     json = JSON.stringify;
 socket.connect();
 socket.on('message', function(message) {

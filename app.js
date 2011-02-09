@@ -39,7 +39,7 @@ app.get('/chat', function(req, res){
 // Only listen on $ node app.js
 
 if (!module.parent) {
-  app.listen(80);
+  app.listen(3004);
   console.log("Express server listening on port %d", app.address().port)
 }
 
