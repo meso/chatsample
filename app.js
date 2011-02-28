@@ -1,7 +1,6 @@
 var express = require('express'),
     io = require('socket.io'),
-    db = require('dirty')(__dirname + '/log.db'),
-    json = JSON.stringify;
+    db = require('dirty')(__dirname + '/log.db');
 var app = module.exports = express.createServer();
 
 // Configuration
@@ -47,22 +46,24 @@ var socket = io.listen(app);
 var count = 0;
 socket.on('connection', function(client) {
   count++;
-  client.broadcast(json({count: count}));
-  client.send(json({count: count}));
+  client.broadcast({count: count});
+  client.send({count: count});
   db.forEach(function(key, val) {
-    client.send(val);
+    client.send(JSON.parse(val));
   });
 
   client.on('message', function(message) {
     // message
-    db.set(new Date().getTime(), message);
+    var now = new Date().getTime();
+    message.message.time = now;
+    db.set(now, JSON.stringify(message));
     client.broadcast(message);
     client.send(message);
   });
   client.on('disconnect', function() {
     // disconnect
     count--;
-    client.broadcast(json({count: count}));
+    client.broadcast({count: count});
   });
 });
 
