@@ -7,11 +7,11 @@ var app = module.exports = express.createServer();
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
-  app.use(express.bodyDecoder());
+  app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.compiler({ src: __dirname + '/public', enable: ['less'] }));
   app.use(app.router);
-  app.use(express.staticProvider(__dirname + '/public'));
+  app.use(express.static(__dirname + '/public'));
   app.use(express.logger());
 });
 
@@ -29,9 +29,7 @@ app.configure('production', function(){
 
 app.get('/', function(req, res){
   res.render('index.jade', {
-    locals: {
-        title: 'リアルタイムWebハッカソン Chat Room'
-    }
+    title: 'リアルタイムWebハッカソン Chat Room'
   });
 });
 
