@@ -1,6 +1,7 @@
 var express = require('express'),
     io = require('socket.io'),
-    db = require('dirty')(__dirname + '/log.db');
+    db = require('dirty')(__dirname + '/log.db'),
+    fcgi = require('./fcgi');
 var app = module.exports = express.createServer();
 
 // Configuration
@@ -36,8 +37,9 @@ app.get('/', function(req, res){
 // Only listen on $ node app.js
 
 if (!module.parent) {
-  app.listen(80);
-  console.log("Express server listening on port %d", app.address().port)
+  fcgi.handle(app);
+//  app.listen(80);
+//  console.log("Express server listening on port %d", app.address().port)
 }
 
 var socket = io.listen(app);
