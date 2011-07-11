@@ -1,4 +1,4 @@
-var socket = new io.Socket(null, {port: 3004});
+var socket = new io.Socket();
 socket.connect();
 socket.on('message', function(message) {
   if (message.count) {
